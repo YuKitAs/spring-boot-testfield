@@ -6,4 +6,4 @@ Compile, bundle resources and launch with Gradle Wrapper:
 $ ./gradlew bootRun 
 ```
 
-Default URL: `localhost:8080`
+Default port: `8080`
