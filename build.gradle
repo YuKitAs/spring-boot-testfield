@@ -15,6 +15,7 @@ buildscript {
 apply plugin: "kotlin"
 apply plugin: "kotlin-spring"
 apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
 
 jar {
     baseName = "gs-rest-service"
@@ -29,5 +30,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+    compile "mysql:mysql-connector-java:5.1.13"
     testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_version"
 }
