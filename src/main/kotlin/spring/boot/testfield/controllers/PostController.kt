@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import spring.boot.testfield.models.Post
 import spring.boot.testfield.repositories.PostRepository
+import java.time.LocalDate
 import javax.validation.Valid
 
 @RestController
@@ -18,7 +19,7 @@ class PostController(val postRepository: PostRepository) {
             postRepository.findById(id).map { post -> ResponseEntity.ok(post) }.orElse(ResponseEntity.notFound().build())
 
     @PostMapping("/posts")
-    fun createPost(@Valid @RequestBody post: Post): Post = postRepository.save(post)
+    fun createPost(@Valid @RequestBody post: Post): Post = postRepository.save(Post(post.id, post.title, post.content, post.author, LocalDate.now()))
 
     @PutMapping("/posts/{id}")
     fun updatePostById(@PathVariable id: Long, @Valid @RequestBody newPost: Post): ResponseEntity<Post> =

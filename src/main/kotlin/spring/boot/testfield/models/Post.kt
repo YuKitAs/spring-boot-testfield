@@ -20,5 +20,5 @@ data class Post(
 
         val author: String = "",
 
-        val createdAt: LocalDate = LocalDate.now()
+        val createdAt: LocalDate
 )
