@@ -1,9 +1,11 @@
 # spring-boot-testfield
 
-Compile, bundle resources and launch with Gradle Wrapper:
+* Start MySQL server
 
-```console
-$ ./gradlew bootRun 
-```
+* Compile, bundle resources and launch with Gradle Wrapper:
 
-Default port: `8080`
+  ```console
+  $ ./gradlew bootRun 
+  ```
+
+  Default port: `8080`
