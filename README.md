@@ -5,7 +5,7 @@
 * Compile, bundle resources and launch with Gradle Wrapper:
 
   ```console
-  $ ./gradlew bootRun 
+  $ ./gradlew clean bootRun 
   ```
 
   Default port: `8080`
