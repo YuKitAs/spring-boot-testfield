@@ -12,13 +12,10 @@ import javax.validation.constraints.NotBlank
 data class Post(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long = 0,
-
         @get: NotBlank
-        val title: String = "",
-
-        val content: String = "",
-
-        val author: String = "",
-
+        val title: String,
+        val content: String,
+        @get: NotBlank
+        val author: String,
         val createdAt: LocalDate
 )
