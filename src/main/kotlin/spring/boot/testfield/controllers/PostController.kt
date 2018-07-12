@@ -24,7 +24,7 @@ class PostController(val postRepository: PostRepository) {
     @PutMapping("/posts/{id}")
     fun updatePostById(@PathVariable id: Long, @Valid @RequestBody newPost: Post): ResponseEntity<Post> =
             postRepository.findById(id).map { post ->
-                val updatedPost: Post = post.copy(title = newPost.title, content = newPost.content)
+                val updatedPost: Post = post.copy(title = newPost.title, content = newPost.content, author = newPost.author)
                 ResponseEntity.ok().body(postRepository.save(updatedPost))
             }.orElse(ResponseEntity.notFound().build())
 
